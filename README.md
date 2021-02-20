@@ -88,3 +88,22 @@ The site should now be available in a browser at `http://localhost:8000/`.
 A graph diagram of the application's models may be generated
 using ```./manage.py graph_models -a -g -o models.png```.
 
+The environment variables in project.env may not work unless
+`export ...` is added to the file. For example:
+
+```bash
+POSTGRES_USER=<database user>
+POSTGRES_PASSWORD=<database password>
+POSTGRES_DB=<database name>
+DATABASE=postgres
+DATABASE_HOST=postgresdb
+DATABASE_PORT=5432
+SECRET_KEY=<any key>
+export POSTGRES_USER=$POSTGRES_USER
+export POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+export POSTGRES_DB=$POSTGRES_DB
+export DATABASE=$DATABASE
+export DATABASE_HOST=$DATABASE_HOST
+export DATABASE_PORT=$DATABASE_PORT
+export SECRET_KEY=$SECRET_KEY
+```
